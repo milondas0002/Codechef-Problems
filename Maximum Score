@@ -1,0 +1,29 @@
+Problem Link: https://www.codechef.com/problems/MAXSCORE7?tab=statement
+Solution: 
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t, n;
+    cin >> t;
+    while(t--)
+    {
+        cin >> n;
+        vector<int> a(n);
+        for(int i=0; i<n; i++)
+        {
+            cin >> a[i];
+        }
+        int count_one=0, count_zero=0; 
+        for(int i=0; i<n; i++)
+        {
+            if(a[i]==0) count_zero++;
+            else count_one++;
+        }
+        cout << min(count_one, count_zero) << endl;
+    }
+    return 0;
+}
+
+Explanation: If we get the minimum of 0 and 1 it means we are getting a pair of 1 and 0 that has the ability to produce maximum sum. But others will appear most time and as a result the score will get decreased
