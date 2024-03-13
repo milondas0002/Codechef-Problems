@@ -1,0 +1,30 @@
+https://www.codechef.com/problems/FKMC
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int t, n;
+    cin >> t;
+    while(t--)
+    {
+        cin >> n;
+        string s;
+        cin >> s;
+        int c1=0, c0=0, mx=0;
+        for(char c:s)
+        {
+            if(c=='1') {
+                c1++;
+                mx = max(mx, c0); 
+                c0 = 0; 
+            }
+            else {
+                c0++;
+            }
+        }
+        mx = max(mx, c0); 
+        cout << c1+mx << endl;
+    }
+    return 0;
+}
